@@ -3,6 +3,6 @@
 
 ### 用法
 ```
-npm install qy-cli -g 或 yarn global add qy-cli
+npm install qyjs-cli -g 或 yarn global add qyjs-cli
 qy init <name>
 ```

@@ -1,6 +1,6 @@
 {
   "name": "qyjs-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于node开发自用的vue-webpack脚手架工具",
   "keywords": [
     "cli",
@@ -11,10 +11,10 @@
   "author": "yifeinianshao",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yifeinianshao/qy-cli.git"
+    "url": "git+https://github.com/yifeinianshao/qyjs-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/yifeinianshao/qy-cli/issues"
+    "url": "https://github.com/yifeinianshao/qyjs-cli/issues"
   },
   "license": "MIT",
   "bin": {
