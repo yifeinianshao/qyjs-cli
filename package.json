@@ -1,10 +1,11 @@
 {
-  "name": "qy-cli",
+  "name": "qyjs-cli",
   "version": "1.0.0",
-  "description": "基于node开发自用的vue脚手架工具",
+  "description": "基于node开发自用的vue-webpack脚手架工具",
   "keywords": [
     "cli",
-    "vue-cli"
+    "vue",
+    "qyjs-cli"
   ],
   "main": "index.js",
   "author": "yifeinianshao",
@@ -20,6 +21,11 @@
     "qy": "index.js"
   },
   "dependencies": {
-    "commander": "^2.19.0"
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "download-git-repo": "^1.1.0",
+    "handlebars": "^4.0.12",
+    "inquirer": "^6.2.0",
+    "ora": "^3.0.0"
   }
 }
