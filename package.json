@@ -1,0 +1,25 @@
+{
+  "name": "qy-cli",
+  "version": "1.0.0",
+  "description": "基于node开发自用的vue脚手架工具",
+  "keywords": [
+    "cli",
+    "vue-cli"
+  ],
+  "main": "index.js",
+  "author": "yifeinianshao",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yifeinianshao/qy-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yifeinianshao/qy-cli/issues"
+  },
+  "license": "MIT",
+  "bin": {
+    "qy": "index.js"
+  },
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
+}
