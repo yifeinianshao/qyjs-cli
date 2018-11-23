@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs')
+const path = require('path')
 const program = require('commander')
-const handlebars = require('handlebars')
 const ora = require('ora')
 const chalk = require('chalk')
 const { downloadGitRepo } = require('./download')
@@ -11,7 +11,11 @@ function log(context, isfail = true) {
     console.log(isfail ? chalk.red(context) : chalk.green(context))
 }
 
-const json = fs.readFileSync('./package.json')
+function resolve(src) {
+    return path.resolve(__dirname, '.', src)
+}
+
+const json = fs.readFileSync(resolve('package.json'))
 const { version } = JSON.parse(json.toString())
 
 program
@@ -27,16 +31,16 @@ program
                         log(err)
                     } else {
                         spinner.succeed()
-                        const packageJson = `${name}/package.json`
+                        const absoluteUrl = process.cwd()
+                        const packageJson = `${absoluteUrl}/${name}/package.json`
                         const meta = {
-                            name,
-                            description: answers.description,
-                            author: answers.author
+                            ...answers,
+                            name
                         }
                         if (fs.existsSync(packageJson)) {
                             const content = fs.readFileSync(packageJson).toString()
-                            const result = handlebars.compile(content)(meta)
-                            fs.writeFileSync(packageJson, result)
+                            const result = Object.assign(JSON.parse(content), meta)
+                            fs.writeFileSync(packageJson, JSON.stringify(result, null, 4))
                         }
                         log('模板下载完成', false)
                     }
