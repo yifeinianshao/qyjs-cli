@@ -1,6 +1,6 @@
 {
     "name": "qyjs-cli",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "基于node开发自用的vue-webpack脚手架工具",
     "keywords": [
         "cli",

@@ -1,25 +1,18 @@
 #!/usr/bin/env node
 const fs = require('fs')
-const path = require('path')
 const program = require('commander')
 const ora = require('ora')
 const chalk = require('chalk')
 const { downloadGitRepo } = require('./download')
 const { prompt } = require('./prompt')
+const packageConfig = require('./package.json')
 
 function log(context, isfail = true) {
     console.log(isfail ? chalk.red(context) : chalk.green(context))
 }
 
-function resolve(src) {
-    return path.resolve(__dirname, '.', src)
-}
-
-const json = fs.readFileSync(resolve('package.json'))
-const { version } = JSON.parse(json.toString())
-
 program
-    .version(version, '-v, --version')
+    .version(packageConfig.version, '-v, --version')
     .command('init <name>')
     .action(async name => {
         if(!fs.existsSync(name)) {
