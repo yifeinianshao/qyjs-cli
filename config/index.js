@@ -1,4 +1,9 @@
-const templateUrl = 'yifeinianshao/vue-template'
+const templateAuthor = 'yifeinianshao'
+const templateUrl = {
+    vue: `${templateAuthor}/vue-template`,
+    react: `${templateAuthor}/react-template`,
+    wxapp: `${templateAuthor}/wx-app`
+}
 
 const question = [
     {

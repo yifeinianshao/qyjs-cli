@@ -13,12 +13,12 @@ function log(context, isfail = true) {
 
 program
     .version(packageConfig.version, '-v, --version')
-    .command('init <name>')
-    .action(async name => {
+    .command('init <type> <name>')
+    .action(async (type, name) => {
         if(!fs.existsSync(name)) {
             const answers = await prompt()
             const spinner = ora('正在下载模板...').start()
-            const err = await downloadGitRepo(name)
+            const err = await downloadGitRepo(type, name)
             if (err) {
                 spinner.fail()
                 log(err)

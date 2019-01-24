@@ -1,9 +1,9 @@
 const download = require('download-git-repo')
 const { templateUrl } = require('../config')
 
-function downloadGitRepo(name) {
+function downloadGitRepo(type, name) {
     return new Promise(resolve => {
-        download(templateUrl, name, err => {
+        download(templateUrl[type], name, err => {
             resolve(err)
         })
     })
